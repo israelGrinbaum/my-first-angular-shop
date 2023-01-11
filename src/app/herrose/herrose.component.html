@@ -1,0 +1,31 @@
+<p>herrose works!</p>
+<h2>My Herrose:</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of herrose"
+  (click)="onSelect(hero)"
+  [class.selected]="hero===selectedHero">
+  <a routerLink="/detail/{{hero.id}}">
+    <span class="badge">{{ hero.id }}: </span>{{ hero.name }}
+  </a>
+  </li>
+</ul>
+
+<app-hero-detail 
+  [hero]="selectedHero"
+  (clicked)="myHero($event)">
+</app-hero-detail>
+
+
+<!-- <div *ngIf="selectedHero; else elseBlock">
+  <h2>{{ selectedHero.name | uppercase }} Details</h2>
+  <div><span>id:</span> {{ selectedHero.id }}</div>
+  <div>
+    <label
+      >name:
+      <input [(ngModel)]="selectedHero.name" placeholder="name" />
+    </label>
+  </div>
+</div>
+<div *ngIf="selectedHero; then thenBlock"></div>
+<ng-template #elseBlock>condition is false</ng-template>
+<ng-template #thenBlock>condition is true</ng-template> -->

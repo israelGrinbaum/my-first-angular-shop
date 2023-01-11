@@ -1,0 +1,15 @@
+<nav>
+    <a routerLink="/heroes">Heroes</a>
+    <a routerLink="/dashboard">dashboard</a>
+</nav>
+
+
+<h1>{{title}}</h1>
+<input type="text" [value]="title"/>
+<button (click)="onSave()">Save</button>
+<button (click)="Toggle()">toggle</button>
+
+<router-outlet></router-outlet>
+
+<!-- <app-herrose></app-herrose>
+<app-messages></app-messages> -->
